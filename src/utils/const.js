@@ -4,31 +4,31 @@ export const genreList = [
     url: "music",
   },
   {
-    name: "スポーツ",
-    url: "sport",
-  },
-  {
     name: "お笑い",
     url: "comedy",
   },
   {
-    name: "アニメ",
-    url: "anime",
+    name: "スポーツ",
+    url: "sports",
+  },
+  {
+    name: "映画&アニメ",
+    url: "filmAnimation",
+  },
+  {
+    name: "動物",
+    url: "animals",
   },
   {
     name: "ゲーム",
-    url: "game",
+    url: "gaming",
   },
   {
-    name: "ファッション",
-    url: "fasion",
+    name: "Vlog",
+    url: "vlog",
   },
   {
     name: "ニュース",
     url: "news",
-  },
-  {
-    name: "キーワード検索",
-    url: "search",
   },
 ];
