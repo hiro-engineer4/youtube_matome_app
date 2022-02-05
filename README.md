@@ -11,3 +11,12 @@ Youtube の各ジャンルの急上昇ランキングをまとめています。
 - インフラ
 
   - Vercel
+
+- 使用ライブラリ
+
+  - Tailwind CSS
+  - SWR
+
+- API
+
+  - YouTube Data API

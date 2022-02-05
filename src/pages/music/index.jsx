@@ -3,7 +3,7 @@ import { MusicComponent } from "src/components/Music";
 import { SWRConfig } from "swr";
 
 export const getStaticProps = async () => {
-  const MUSIC_API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet&regionCode=JP&chart=mostPopular&videoCategoryId=10&maxResults=3&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`;
+  const MUSIC_API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet&regionCode=JP&chart=mostPopular&videoCategoryId=10&maxResults=3&key=${process.env.YOUTUBE_API_KEY}`;
   const music = await fetch(MUSIC_API_URL);
   const musicData = await music.json();
 
