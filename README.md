@@ -7,15 +7,12 @@ Youtube の各ジャンルの急上昇ランキングをまとめています。
 - フロントエンド
 
   - Next.js による Static Site Generation
+  - Tailwind CSS
+  - SWR
 
 - インフラ
 
   - Vercel
-
-- 使用ライブラリ
-
-  - Tailwind CSS
-  - SWR
 
 - API
 
