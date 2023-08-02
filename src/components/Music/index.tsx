@@ -1,7 +1,7 @@
-import { useMusic } from "src/hooks/useFetchArray";
+import { useMusic } from "@/src/hooks/useFetchArray";
 
 export const MusicComponent = () => {
-  const { data, error, isLoading, isEmpry } = useMusic();
+  const { data, error, isLoading } = useMusic();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -10,13 +10,9 @@ export const MusicComponent = () => {
     return <div>{error.message}</div>;
   }
 
-  if (isEmpry) {
-    return <div>データは空です</div>;
-  }
-
   return (
     <ul className="grid grid-cols-1 gap-6">
-      {data.items.map((music) => {
+      {data?.items.map((music) => {
         return (
           <li key={music.id}>
             <iframe

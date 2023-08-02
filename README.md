@@ -1,12 +1,13 @@
-## Youtube まとめアプリ
+## Youtubeまとめアプリ
 
-Youtube の各ジャンルの急上昇ランキングをまとめています。（※毎日更新）
+Youtubeの各ジャンルの急上昇ランキングをまとめています。（※毎日更新）
 
 ## 実装機能
 
 - フロントエンド
 
-  - Next.js による Static Site Generation
+  - TypeScript
+  - Next.js
   - Tailwind CSS
   - SWR
 

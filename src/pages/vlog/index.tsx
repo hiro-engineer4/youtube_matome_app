@@ -1,6 +1,8 @@
+import { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
-import { VlogComponent } from "src/components/Vlog";
 import { SWRConfig } from "swr";
+
+import { VlogComponent } from "@/src/components/Vlog";
 
 export const getStaticProps = async () => {
   const VLOG_API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet&regionCode=JP&chart=mostPopular&videoCategoryId=10&maxResults=3&key=${process.env.NEXT_PUBLIC_YOUTUBE_API_KEY}`;
@@ -17,7 +19,9 @@ export const getStaticProps = async () => {
   };
 };
 
-const Vlog = (props) => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const Vlog: NextPage<Props> = (props) => {
   const { fallback } = props;
 
   return (

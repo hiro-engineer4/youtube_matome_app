@@ -1,7 +1,7 @@
-import { useGaming } from "src/hooks/useFetchArray";
+import { useGaming } from "@/src/hooks/useFetchArray";
 
 export const GamingComponent = () => {
-  const { data, error, isLoading, isEmpry } = useGaming();
+  const { data, error, isLoading } = useGaming();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -10,13 +10,9 @@ export const GamingComponent = () => {
     return <div>{error.message}</div>;
   }
 
-  if (isEmpry) {
-    return <div>データは空です</div>;
-  }
-
   return (
     <ul className="grid grid-cols-1 gap-6">
-      {data.items.map((gaming) => {
+      {data?.items.map((gaming) => {
         return (
           <li key={gaming.id}>
             <iframe

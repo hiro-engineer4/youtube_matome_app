@@ -1,7 +1,7 @@
-import { useVlog } from "src/hooks/useFetchArray";
+import { useVlog } from "@/src/hooks/useFetchArray";
 
 export const VlogComponent = () => {
-  const { data, error, isLoading, isEmpry } = useVlog();
+  const { data, error, isLoading } = useVlog();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -10,13 +10,9 @@ export const VlogComponent = () => {
     return <div>{error.message}</div>;
   }
 
-  if (isEmpry) {
-    return <div>データは空です</div>;
-  }
-
   return (
     <ul className="grid grid-cols-1 gap-6">
-      {data.items.map((vlog) => {
+      {data?.items.map((vlog) => {
         return (
           <li key={vlog.id}>
             <iframe

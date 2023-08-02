@@ -1,6 +1,8 @@
+import { InferGetStaticPropsType, NextPage } from "next";
 import Head from "next/head";
-import { MusicComponent } from "src/components/Music";
 import { SWRConfig } from "swr";
+
+import { MusicComponent } from "@/src/components/Music";
 
 export const getStaticProps = async () => {
   const MUSIC_API_URL = `https://www.googleapis.com/youtube/v3/videos?part=snippet&regionCode=JP&chart=mostPopular&videoCategoryId=10&maxResults=3&key=${process.env.YOUTUBE_API_KEY}`;
@@ -17,7 +19,9 @@ export const getStaticProps = async () => {
   };
 };
 
-const Music = (props) => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const Music: NextPage<Props> = (props) => {
   const { fallback } = props;
 
   return (

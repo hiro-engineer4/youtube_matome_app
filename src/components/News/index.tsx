@@ -1,7 +1,7 @@
-import { useNews } from "src/hooks/useFetchArray";
+import { useNews } from "@/src/hooks/useFetchArray";
 
 export const NewsComponent = () => {
-  const { data, error, isLoading, isEmpry } = useNews();
+  const { data, error, isLoading } = useNews();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -10,13 +10,9 @@ export const NewsComponent = () => {
     return <div>{error.message}</div>;
   }
 
-  if (isEmpry) {
-    return <div>データは空です</div>;
-  }
-
   return (
     <ul className="grid grid-cols-1 gap-6">
-      {data.items.map((news) => {
+      {data?.items.map((news) => {
         return (
           <li key={news.id}>
             <iframe

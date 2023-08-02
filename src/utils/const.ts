@@ -1,4 +1,9 @@
-export const genreList = [
+export type GenreListTypes = {
+  name: string;
+  url: string;
+};
+
+export const genreList: GenreListTypes[] = [
   {
     name: "音楽",
     url: "music",

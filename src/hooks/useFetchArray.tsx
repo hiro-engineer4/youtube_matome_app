@@ -1,13 +1,33 @@
 import useSWRImmutable from "swr/immutable";
-import { fetcher } from "src/utils/fetcher";
 
-const useFetchArray = (url) => {
-  const { data, error } = useSWRImmutable(url, fetcher);
+import { fetcher } from "../utils/fetcher";
+
+type Item = {
+  id: string;
+  etag: string;
+  kind: string;
+};
+
+type Data = {
+  etag: string;
+  items: Item[];
+  kind: string;
+  nextPageToken: string;
+  pageInfo: {
+    resultsPerPage: number;
+    totalResults: number;
+  };
+};
+
+const useFetchArray = (url: string) => {
+  const { data, error } = useSWRImmutable<Data | undefined, Error>(
+    url,
+    fetcher
+  );
   return {
     data,
     error,
     isLoading: !data && !error,
-    isEmpry: data && data.length === 0,
   };
 };
 

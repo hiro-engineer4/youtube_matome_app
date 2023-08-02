@@ -1,7 +1,7 @@
-import { useAnimals } from "src/hooks/useFetchArray";
+import { useAnimals } from "@/src/hooks/useFetchArray";
 
 export const AnimalsComponent = () => {
-  const { data, error, isLoading, isEmpry } = useAnimals();
+  const { data, error, isLoading } = useAnimals();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -10,13 +10,9 @@ export const AnimalsComponent = () => {
     return <div>{error.message}</div>;
   }
 
-  if (isEmpry) {
-    return <div>データは空です</div>;
-  }
-
   return (
     <ul className="grid grid-cols-1 gap-6">
-      {data.items.map((animals) => {
+      {data?.items.map((animals) => {
         return (
           <li key={animals.id}>
             <iframe
